@@ -73,13 +73,13 @@ The agent runs the query from `query.txt` on startup, then enters interactive ch
 
 ### Sample Output
 
-![Agent terminal output](log/Screenshot%202026-04-15%20020832.png)
+![Agent terminal output](log/terminal_output.png)
 
-## Observability
+## Monitoring
 
 LangSmith tracing is enabled via environment variables. Each run logs the full agent trace — tool calls, inputs, outputs, token usage, and latency.
 
-![LangSmith trace](log/Screenshot%202026-04-15%20020701.png)
+![LangSmith trace](log/langsmith_trace.png)
 
 ## Switching Models
 
