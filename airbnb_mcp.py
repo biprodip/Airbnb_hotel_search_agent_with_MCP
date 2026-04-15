@@ -14,6 +14,7 @@ from langchain.agents import create_agent
 from langchain.messages import HumanMessage
 
 from config.models import get_gemini
+from config.utils import load_mcp_config
 from tools import base_tools
 from prompts import prompts
 
@@ -63,15 +64,7 @@ async def ask(agent):
 
 async def main():
     """Initialise MCP client and agent once, then run initial query and chat loop."""
-    client = MultiServerMCPClient(
-        {
-            "airbnb": {
-                "command": "npx",
-                "args": ["-y", "@openbnb/mcp-server-airbnb", "--ignore-robots-txt"],
-                "transport": "stdio",
-            }
-        }
-    )
+    client = MultiServerMCPClient(load_mcp_config("airbnb"))
     mcp_tools = await client.get_tools()
     tools = mcp_tools + [base_tools.web_search, base_tools.get_weather]
     logger.info(f"Loaded {len(tools)} tools")
