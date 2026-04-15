@@ -60,7 +60,7 @@ cp .env.example .env
 
 Edit `query.txt` with your search:
 ```
-Show me 2 beachfront apartments in Bali for 5 nights from next Friday.
+Show me 2 beachfront apartments in Bali for 5 nights from next Friday, and the weather report.
 ```
 
 ## Usage
